@@ -84,10 +84,8 @@ public class ComercialController {
         }
 
         comercialService.newComercial(comercial);
-        List<Comercial> listaComerciales =  comercialService.listAll();
-        model.addAttribute("listaComerciales", listaComerciales);
 
-        return "comerciales" ;
+        return "redirect:/comerciales" ;
 
     }
     @GetMapping("comerciales/editar/{id}")
@@ -109,10 +107,8 @@ public class ComercialController {
         }
 
         comercialService.replaceComercial(comercial);
-        List<Comercial> listaComerciales =  comercialService.listAll();
-        model.addAttribute("listaComerciales", listaComerciales);
 
-        return "comerciales";
+        return "redirect:/comerciales" ;
     }
 
     @PostMapping("comerciales/borrar/{id}")
